@@ -5,7 +5,7 @@
         <div class="col-md-12" >
 
     <!-- Item -->
-            <h2 class="subject">Trump</h2>
+    <h3 class="subject">Apple</h3>
             <div class="each-item">
               <div class="image-container">
                 <img class="img" :src="news.articles[0].urlToImage">
@@ -16,11 +16,11 @@
               </div>
               <br/>
               <!--Button issue: need to be clicked twice to popup the modal-->
-              <b-button v-b-modal.modal-multi-2 class="btn-sm btn-primary mb-3" @click="newsDetails(news.articles[0])">Read More</b-button>
+              <b-button v-b-modal.modal-multi-1 class="btn-sm btn-primary mb-3" @click="newsDetails(news.articles[0])">Read More</b-button>
             </div>
             
     <!-- Content of first layer modal -->
-            <b-modal id="modal-multi-2" size="lg"ok-only no-stacking>
+            <b-modal id="modal-multi-1" size="lg"ok-only no-stacking>
               <NewsDetails v-bind:newsdetail="newsdetail"></NewsDetails>
               <div class="line"></div>
 
@@ -40,7 +40,7 @@
         </div>
       </div>
       </div>
-    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -48,9 +48,8 @@
 import NewsDetails from '@/components/NewsDetails.vue'
 import axios from "axios"
 
-
 export default {
-  name: 'item2',
+  name: 'item1',
   data(){
     return {
       news:[],
@@ -66,13 +65,13 @@ export default {
     }
   },
   created(){
-    axios.get('https://newsapi.org/v2/top-headlines?q=trump&apiKey=e351d24b45df4eb09e93286cca7833c5')
+    axios.get('https://newsapi.org/v2/everything?q=apple&from=2019-12-10&to=2019-12-10&sortBy=popularity&apiKey=e351d24b45df4eb09e93286cca7833c5')
     .then(res => this.news = res.data)
     .catch(err => console.log(err))
   }
 }
-
 </script>
+
 <style scoped>
 
 

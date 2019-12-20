@@ -19,7 +19,7 @@
         </div>
         <p>{{ newsdetail.content }}</p>
         <br/>
-        <span>Read more: </span><a target="_blank" :href="newsdetail.url">{{ newsdetail.url}}</a>
+        <span>Read more: </span><a target="_blank" :href="newsdetail.url">{{ newsdetail.url }}</a>
     </div>
   </div>
 </template>

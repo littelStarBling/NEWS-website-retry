@@ -5,7 +5,6 @@
         <div class="col-md-12" >
 
     <!-- Item -->
-            <h2 class="subject">Trump</h2>
             <div class="each-item">
               <div class="image-container">
                 <img class="img" :src="news.articles[0].urlToImage">
@@ -16,11 +15,11 @@
               </div>
               <br/>
               <!--Button issue: need to be clicked twice to popup the modal-->
-              <b-button v-b-modal.modal-multi-2 class="btn-sm btn-primary mb-3" @click="newsDetails(news.articles[0])">Read More</b-button>
+              <b-button v-b-modal.modal-multi-5 class="btn-sm btn-primary mb-3" @click="newsDetails(news.articles[0])">Read More</b-button>
             </div>
             
     <!-- Content of first layer modal -->
-            <b-modal id="modal-multi-2" size="lg"ok-only no-stacking>
+            <b-modal id="modal-multi-5" size="lg"ok-only no-stacking>
               <NewsDetails v-bind:newsdetail="newsdetail"></NewsDetails>
               <div class="line"></div>
 
@@ -50,7 +49,10 @@ import axios from "axios"
 
 
 export default {
-  name: 'item2',
+  name: 'item5',
+  props : {
+    
+      },
   data(){
     return {
       news:[],
@@ -66,7 +68,7 @@ export default {
     }
   },
   created(){
-    axios.get('https://newsapi.org/v2/top-headlines?q=trump&apiKey=e351d24b45df4eb09e93286cca7833c5')
+    axios.get('https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=e351d24b45df4eb09e93286cca7833c5')
     .then(res => this.news = res.data)
     .catch(err => console.log(err))
   }
@@ -74,6 +76,5 @@ export default {
 
 </script>
 <style scoped>
-
 
 </style>

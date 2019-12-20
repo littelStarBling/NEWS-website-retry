@@ -1,11 +1,12 @@
 <!--The generated navbar component will replace the default router in App.vue-->
 <template>
 <!--Navbar is fixed on top-->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light  bg-light">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="nav-item active">
       <router-link to="/" class="nav-link">NEWS</router-link>
     </div>
-    <!--The hamburger doesn't work. Even though it is a default code from bootstrap -->
+
+    <!--The hamburger doesn't work. It is a default code from bootstrap setting-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,8 +19,9 @@
       <li class="nav-item dropdown">
         <b-nav-item-dropdown text="Category" right>
           <!--Page links need to be updated & create those pages-->
-          <b-dropdown-item href="#">Technology</b-dropdown-item>
-          <b-dropdown-item href="#">Sport</b-dropdown-item>
+          
+          <b-dropdown-item href="#"><router-link to="/technology" class="nav-link">Technology</router-link></b-dropdown-item>
+          <b-dropdown-item href="#"><router-link to="/sport" class="nav-link">Sport</router-link></b-dropdown-item>
         </b-nav-item-dropdown>
       </li>
     </ul>

@@ -1,0 +1,44 @@
+  /**items on home page */
+
+.news-title {
+    width:16em;
+    height: 6em;
+    margin: 0 auto;
+  }
+  .btn-sm {
+    margin: 0 atuo;
+  }
+  /** padding of item */
+  .each-item {
+    margin-left: 2em;
+  }
+  
+  /** align image size */
+  .image-container {
+    width:16em;
+    height:10em;
+    background-color: white;
+    margin: 0 auto;
+  }
+  .img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .line {
+    margin: 1em auto;
+    background-color: gray;
+    width: 100%;
+    height: 1px;
+  }
+  .subject {
+    text-align: left;
+    padding-left: 2rem;
+  }
+  @media screen and (min-width: 600px) {
+    .item{
+    margin-top: 5em;
+    }
+  }
+  
+  /**items on home page */
